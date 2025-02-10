@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Facts App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #343a40;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            min-height: 60px; /* Ensures space for the fact */
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Rohit Sharma is the only player to score three double centuries in One Day Internationals (ODIs).",
+            "India has won the ICC Cricket World Cup twice, in 1983 and 2011.",
+            "The highest individual score in ODIs is 400*, achieved by Rohit Sharma against Sri Lanka in 2014.",
+            "Sachin Tendulkar holds the record for the most runs in international cricket, with over 34,000 runs.",
+            "The Indian Premier League (IPL) is one of the richest and most popular T20 leagues in the world.",
+            "Rohit Sharma is the captain of the Indian national cricket team in limited-overs formats.",
+            "The first-ever Test match was played between England and Australia in 1877.",
+            "India has produced some of the greatest cricketers in history, including Kapil Dev, Sunil Gavaskar, and MS Dhoni.",
+            "Rohit Sharma has the highest number of centuries in T20 internationals, with over 30 centuries.",
+            "The 2007 ICC T20 World Cup was won by India, marking the beginning of T20 cricket's popularity.",
+            "Anil Kumble is India's highest wicket-taker in Test cricket, with 619 wickets.",
+            "The 2011 ICC Cricket World Cup final was held at Wankhede Stadium in Mumbai, where India defeated Sri Lanka.",
+            "Virat Kohli is known for his aggressive batting style and has numerous records in all formats of the game.",
+            "The famous 'Gully Cricket' is a popular form of cricket played in the streets and alleys of India.",
+            "MS Dhoni is the only captain to win all three ICC trophies: the T20 World Cup, the ODI World Cup, and the Champions Trophy."
+        ];
+
+        const factElement = document.getElementById('fact');
+        const button = document.getElementById('newFactButton');
+
+        button.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factElement.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
